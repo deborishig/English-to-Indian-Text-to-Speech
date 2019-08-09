@@ -1,0 +1,38 @@
+﻿{% extends 'layout.html' %}
+
+{%block body%}
+
+<br />
+<br />
+
+
+<h1 style="text-align:center;">This is your translation</h1>
+
+<br />
+<br />
+<br />
+
+
+{% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+        {% for message in messages %}
+            <h1 style="text-align:center;">{{ message }}</h1>
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+
+
+<br />
+<br />
+<br />
+
+<div style="text-align:center">
+    <p><input style="text-align:center;" type="submit" class="btn btn-primary" value="Submit"></p>
+</div>
+
+
+{% endblock%}

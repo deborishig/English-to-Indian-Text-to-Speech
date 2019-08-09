@@ -1,0 +1,63 @@
+﻿{% extends 'layout.html' %}
+
+{%block body%}
+
+<br />
+<br />
+<br />
+
+<h1 style="text-align:center;">Welcome to GreatView Technology's TTS page</h1>
+
+<br />
+<br />
+<br />
+
+{% from "includes/_formhelpers.html" import render_field %}
+
+<form method="POST" action="">
+    <div class="form-group">
+        {{render_field(form.Language, class_="form-control")}}
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="form-group">
+        {{render_field(form.Sentence, class_="form-control")}}
+    </div>
+
+    <br />
+    <br />
+
+
+    <div class="form-group">
+        {{render_field(form.Output_File_Name, class_="form-control")}}
+    </div>
+
+    <br />
+    <br />
+
+
+    <div style="text-align:center">
+        <p><input style="text-align:center;" type="submit" class="btn btn-primary" value="Submit"></p>
+
+    </div>
+</form>
+
+{% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+        {% for message in messages %}
+<h4 style="text-align:center;">{{ message }}</h4>
+        {% endfor %}
+
+    {% endif %}
+{% endwith %}
+
+<br />
+<br />
+<br />
+
+
+{% endblock%}
